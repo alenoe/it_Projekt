@@ -22,6 +22,12 @@ public class GameM implements Observer{
 		this.players.add(player1);
 		this.players.add(player2);
 		this.rounds = 0;
+		// Hier könnte man noch eine Variable setzen anhand der dann das GUI erkennt: 
+		// "AH! Ich muss Spieler-Feld 1 (Ape_green_king.png, Label, Button und co.) und 2 (Ape_violet_king.png und co.) laden!"
+		// vllt. ein "if (player.size() == 2) { GuiFür2Player.FXML }"
+		// Idee von: http://stackoverflow.com/questions/11563298/how-to-change-sub-fxml-gui-parts-at-runtime-with-button-click
+		// Man kann bei den Injections auch direkt Methoden, if-Abfragen und co. machen. Während des Initializable und während das Programm bereits läuft
+		// - Kommentar von R
 		
 		while(endOfGame = false){
 			this.addRound();
@@ -34,6 +40,9 @@ public class GameM implements Observer{
 		this.players.add(player2);
 		this.players.add(player3);
 		this.rounds = 0;
+		// Hier könnte man noch eine Variable setzen anhand der dann das GUI erkennt: "AH! Ich muss Spieler-Feld 1, 2 und 3 laden!"
+		// vllt. ein "if (player.size() == 3) { GuiFür3Player.FXML }"
+		// - Kommentar von R
 	}
 	
 	public GameM(PlayerInGameM player1, PlayerInGameM player2, PlayerInGameM player3, PlayerInGameM player4){
@@ -43,6 +52,9 @@ public class GameM implements Observer{
 		this.players.add(player3);
 		this.players.add(player4);
 		this.rounds = 0;
+		// Hier könnte man noch eine Variable setzen anhand der dann das GUI erkennt: "AH! Ich muss Spieler-Feld 1, 2, 3 und 4 laden!"
+		// vllt. ein "if (player.size() == 4) { GuiFür4Player.FXML }"
+		// - Kommentar von R
 	}
 	
 //	public PlayerInGameM getCurrentPlayer(){
