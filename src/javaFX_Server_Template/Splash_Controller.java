@@ -14,7 +14,7 @@ import javafx.concurrent.Worker;
  */
 public class Splash_Controller extends Controller<Splash_Model, Splash_View> {
 
-    public Splash_Controller(final JavaFX_App_Template main, Splash_Model model, Splash_View view) { // final JavaFX_App_Template main -> Da die Main-Klasse sich selbst übergibt, kann der Controller jetzt so auf Methoden in der Main-Klasse zugreifen
+    public Splash_Controller(final JavaFX_Server_Template main, Splash_Model model, Splash_View view) { // final JavaFX_App_Template main -> Da die Main-Klasse sich selbst übergibt, kann der Controller jetzt so auf Methoden in der Main-Klasse zugreifen
         super(model, view);
         
         // We could monitor the progress property and pass it on to the progress bar

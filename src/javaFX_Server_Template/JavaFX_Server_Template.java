@@ -6,6 +6,8 @@ import java.io.File;
 import java.net.URL;
 import java.util.Random;
 
+import Server.Server_Controller;
+import Client.Client_Controller;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -20,11 +22,11 @@ import javafx.stage.Stage;
  * 
  * @author Brad Richards
  */
-public class JavaFX_App_Template extends Application {
-    private static JavaFX_App_Template mainProgram; // singleton
+public class JavaFX_Server_Template extends Application {
+    private static JavaFX_Server_Template mainProgram; // singleton
     private Splash_View splashView;
     // NICHT MEHR BENÖTIGT - private ClientLogin_View view; // Da es ja keinen Klassischen View mehr gibt, wie gehe ich hier vor???  Einfach die leere Bonuspunkte_View angeben?
-    private Stage appStage = null;
+    private Stage serverStage = null;
     
 	private ServiceLocator serviceLocator; // resources, after initialization
 
@@ -94,20 +96,21 @@ public class JavaFX_App_Template extends Application {
      */
     public void startApp() {
         // Stage appStage = new Stage();
-    	appStage = new Stage();
+    	serverStage = new Stage();
     	// Resources are now initialized
         ServiceLocator sl = ServiceLocator.getServiceLocator();  
 	    Translator t = sl.getTranslator();
+	    System.out.println("BLABLA");
         try {
-			final URL fxmlURL = getClass().getResource("Login.fxml"); // FXML-File from the ClientLogin-Window
+			final URL fxmlURL = getClass().getResource("/Client/Server.fxml"); // FXML-File from the ClientLogin-Window
 			final FXMLLoader fxmlLoader = new FXMLLoader(fxmlURL);
-			fxmlLoader.setController(new Client_Controller());
+			fxmlLoader.setController(new Server_Controller());
 			final Parent root = fxmlLoader.load();
 			Scene scene = new Scene(root, 450, 250);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			appStage.setScene(scene);
-			appStage.setTitle(t.getString("program.name.windowName"));
-			appStage.show();
+//			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			serverStage.setScene(scene);
+			serverStage.setTitle(t.getString("program.name.windowName"));
+			serverStage.show();
 			String zwischenstatus = fxmlURL.toString();
 			System.out.println("Application FXML Loader Pfad ist: " + zwischenstatus);
         } catch(Exception e) {
@@ -133,17 +136,17 @@ public class JavaFX_App_Template extends Application {
      */
     @Override
     public void stop() {
-        if (appStage != null) {
+        if (serverStage != null) {
             // Make the view invisible
-        	serviceLocator.getLogger().info("ClientLogin-GUI wird beendet"); // HIIIER Kommt wohl kein check durch - ist es wirklich view den wir prüfen müssen??
-        	appStage.hide();
+        	serviceLocator.getLogger().info("Server-GUI wird beendet"); // HIIIER Kommt wohl kein check durch - ist es wirklich view den wir prüfen müssen??
+        	serverStage.hide();
         }
-        if (appStage != null) {
+        if (serverStage != null) {
         	Platform.exit(); // Ends all JavaFX activities
             System.exit(0); // Ends all Programm activities
         }
 
-    	serviceLocator.getLogger().info("nach dem if vom App_Template stopp");
+    	serviceLocator.getLogger().info("nach dem if vom Server_Template stopp");
         serviceLocator.setChangeValueWindowIsActive(); // Changes the ServiceLocator Value for WindowIsActive to false so that the thread ShowTimeInWindow() stops
 
         // More cleanup code as needed
@@ -152,7 +155,7 @@ public class JavaFX_App_Template extends Application {
     }
 
     // Static getter for a reference to the main program object
-    protected static JavaFX_App_Template getMainProgram() {
+    protected static JavaFX_Server_Template getMainProgram() {
         return mainProgram;
     }
     

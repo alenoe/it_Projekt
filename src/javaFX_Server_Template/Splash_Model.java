@@ -54,7 +54,7 @@ public class Splash_Model extends Model {
             
             // ... more resources would go here...
             // Load Adressbook
-            serviceLocator.setConfigurationAdressBook(new ConfigurationAdressBook());
+           
             this.updateProgress(6,  6);
 
             return null;
