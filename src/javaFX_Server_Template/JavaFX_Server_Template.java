@@ -138,7 +138,7 @@ public class JavaFX_Server_Template extends Application {
     public void stop() {
         if (serverStage != null) {
             // Make the view invisible
-        	serviceLocator.getLogger().info("Server-GUI wird beendet"); // HIIIER Kommt wohl kein check durch - ist es wirklich view den wir prüfen müssen??
+        	// Commented because of errors - serviceLocator.getLogger().info("Server-GUI wird beendet"); // HIIIER Kommt wohl kein check durch - ist es wirklich view den wir prüfen müssen??
         	serverStage.hide();
         }
         if (serverStage != null) {

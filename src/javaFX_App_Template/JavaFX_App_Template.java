@@ -137,7 +137,7 @@ public class JavaFX_App_Template extends Application {
     public void stop() {
         if (appStage != null) {
             // Make the view invisible
-        	serviceLocator.getLogger().info("ClientLogin-GUI wird beendet"); // HIIIER Kommt wohl kein check durch - ist es wirklich view den wir prüfen müssen??
+        	// Commented because of errors - serviceLocator.getLogger().info("ClientLogin-GUI wird beendet"); // HIIIER Kommt wohl kein check durch - ist es wirklich view den wir prüfen müssen??
         	appStage.hide();
         }
         if (appStage != null) {
