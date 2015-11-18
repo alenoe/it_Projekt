@@ -31,14 +31,10 @@ public class ServiceLocator {
     // Resources
     private Logger logger;
     private Configuration configuration;
-    private ConfigurationAdressBook configurationAdressBook;
     private Translator translator; // Mutlilingual-Texte werden hier eingelesen
     
     private boolean windowIsActive = true; // For deactivating the thread ShowTimeInWindow() in Bonuspunkte_Controller
     
-    // PersonArray
-    private ArrayList<Person> personArray; // Wenn man im View die ListView aktualisieren will, muss der neue eintrag zuerst hier hinzugefügt werden
-
 //    // http://stackoverflow.com/questions/26494865/javafx-8-changing-title-of-primary-stage
 //    final private String windowTitle =  this.translator.getString("program.name.windowName"); // getWindowTitle - TEST OB MAN WINDOW NAME ÄNDERN KANN
     
@@ -89,14 +85,6 @@ public class ServiceLocator {
     public void setConfiguration(Configuration configuration) { // Wenn Parameter "new Configuration" -> in Klasse Configuration wird Konstruktor aufgerufen
         this.configuration = configuration; // Speichere das vom Konstruktor erschaffene Objekt hier im ServiceLocator
     }
-    
- 	public ConfigurationAdressBook getConfigurationAdressBook() {
- 		return configurationAdressBook;
- 	}
-
-	public void setConfigurationAdressBook(ConfigurationAdressBook configurationAdressBook) {
-		this.configurationAdressBook = configurationAdressBook;
-	}
 
     public Locale[] getLocales() {
         return locales;
@@ -110,21 +98,6 @@ public class ServiceLocator {
         this.translator = translator;
     }
     
-	public ArrayList<Person> getPersonArray() {
-		return personArray;
-	}
-
-	public void setPersonArray(ArrayList<Person> personArray) {
-		this.personArray = personArray;
-	}
-	
-	public void addToPersonArray(ArrayList<Person> personArray) {
-		this.personArray = personArray;
-	}
-	
-	public int getPersonArrayTotalCount(){
-		return personArray.size();
-	}
 
 	public boolean getIsWindowIsActive() {
 		return windowIsActive;

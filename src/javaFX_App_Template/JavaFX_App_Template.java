@@ -6,6 +6,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.Random;
 
+import Client.Client_Controller;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
