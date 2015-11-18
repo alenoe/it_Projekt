@@ -102,11 +102,11 @@ public class JavaFX_Server_Template extends Application {
 	    Translator t = sl.getTranslator();
 	    System.out.println("BLABLA");
         try {
-			final URL fxmlURL = getClass().getResource("/Client/Server.fxml"); // FXML-File from the ClientLogin-Window
+			final URL fxmlURL = getClass().getResource("/Server/Server.fxml"); // FXML-File from the ClientLogin-Window
 			final FXMLLoader fxmlLoader = new FXMLLoader(fxmlURL);
 			fxmlLoader.setController(new Server_Controller());
 			final Parent root = fxmlLoader.load();
-			Scene scene = new Scene(root, 450, 250);
+			Scene scene = new Scene(root, 650, 450);
 //			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			serverStage.setScene(scene);
 			serverStage.setTitle(t.getString("program.name.windowName"));
