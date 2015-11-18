@@ -106,12 +106,14 @@ public class JavaFX_App_Template extends Application {
 			fxmlLoader.setController(new Client_Controller());
 			final Parent root = fxmlLoader.load();
 			Scene scene = new Scene(root, 450, 250);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+//			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			appStage.setScene(scene);
 			appStage.setTitle(t.getString("program.name.windowName"));
 			appStage.show();
 			String zwischenstatus = fxmlURL.toString();
 			System.out.println("Application FXML Loader Pfad ist: " + zwischenstatus);
+			
+			
         } catch(Exception e) {
         		e.printStackTrace();
         }
