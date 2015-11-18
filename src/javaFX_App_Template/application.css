@@ -1,0 +1,79 @@
+/* https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html#typecolor */
+/* http://stackoverflow.com/questions/22952531/scrollpanes-in-javafx-8-always-have-gray-background */
+/* http://www.java2s.com/Code/Java/JavaFX/SetLabelTextcolor.htm */
+/* http://stackoverflow.com/questions/10518458/javafx-create-custom-button-with-image */
+/* http://fxexperience.com/2011/12/styling-fx-buttons-with-css/ */
+/* http://docs.oracle.com/javafx/2/get_started/css.htm */
+/* http://www.intechcore.com/javafx-and-css-styles/ */
+/* http://stackoverflow.com/questions/23190049/how-to-make-a-text-content-disappear-after-some-time-in-javafx */
+/* http://www.dummies.com/how-to/content/javafx-how-to-use-property-events.html */
+/* http://globalsoftwp.com/question/javafx-failed-to-make-table-cell-flashing-and-change-cells-text-color/ */
+
+
+.root {
+    -fx-background-color: transparent;
+    
+}
+
+/*
+#listViewEntrylist {
+	-fx-background-color: tomato;
+}
+*/
+/*
+#buttonAddEntry {
+	-fx-background-color: darkgrey;
+}
+*/
+/*
+#buttonEdit {
+	-fx-background-color: tomato;
+}
+*/
+
+#menuAhhhh {
+	-fx-background-color: crimson;
+}
+
+#menuChilloutmusic {
+	-fx-background-color: lightskyblue;
+}
+
+#menuAabout {
+	-fx-background-color: lightgray ;
+}
+/*
+menuLanguageButton.setText(t.getString("program.menu.language.menuLanguageButton"));
+ */   
+/* 
+ * Image: 320px-Flag_of_the_United_States_svg.png
+ * License: public domain - This image is ineligible for copyright and therefore is in the public domain, because it consists entirely of information that is common property and contains no original authorship.
+ * Source:
+ * https://en.wikipedia.org/wiki/File:Flag_of_the_United_States.svg
+ * */
+
+#menuRadioEnglishButton {
+	/*
+	-fx-background-image: url("320px-Flag_of_the_United_States_svg.png");
+	-fx-background-repeat: no-repeat;
+  	-fx-background-position: center;
+  	-fx-background-size: cover;
+  	-fx-border-image-width: 10px;
+  	*/
+  	
+}
+
+
+/*
+ * Image: Flag_of_Germany_200px_wide_svg.png
+ * License: public domain - This image of simple geometry is ineligible for copyright and therefore in the public domain, because it consists entirely of information that is common property and contains no original authorship.
+ * Source:
+ * https://commons.wikimedia.org/wiki/File:Flag_of_Germany.svg
+ */
+
+#menuRadioGermanButton {
+	/*
+	-fx-graphic: url("Flag_of_Germany_200px_wide_svg.png");
+	*/
+}
+
