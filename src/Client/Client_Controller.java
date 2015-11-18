@@ -12,10 +12,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 
 public class Client_Controller implements Initializable{
 	
+	@FXML
+	AnchorPane anchorPane;
 	
 	@FXML
 	TextField tfUsername;
@@ -39,6 +42,7 @@ public class Client_Controller implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		
+		anchorPane.setStyle("-fx-background-color: #FFFFFF");
 		
 		tfPort.setText("14000");
 		tfIP.setText("localhost");
