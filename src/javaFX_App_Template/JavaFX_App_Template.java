@@ -99,8 +99,9 @@ public class JavaFX_App_Template extends Application {
     	// Resources are now initialized
         ServiceLocator sl = ServiceLocator.getServiceLocator();  
 	    Translator t = sl.getTranslator();
+	    System.out.println("BLABLA");
         try {
-			final URL fxmlURL = getClass().getResource("Login.fxml"); // FXML-File from the ClientLogin-Window
+			final URL fxmlURL = getClass().getResource("/Client/Login.fxml"); // FXML-File from the ClientLogin-Window
 			final FXMLLoader fxmlLoader = new FXMLLoader(fxmlURL);
 			fxmlLoader.setController(new Client_Controller());
 			final Parent root = fxmlLoader.load();
