@@ -20,7 +20,7 @@ public class Main extends Application {
 		final URL fxmlUrl = getClass().getResource(
 				"Login.fxml");
 		final FXMLLoader fxmlLoader = new FXMLLoader(fxmlUrl);
-		fxmlLoader.setController(new Controller());
+		fxmlLoader.setController(new Client_Controller());
 		final Parent root = fxmlLoader.load();
 		stage.setScene(new Scene(root, 450, 250));
 		stage.setTitle("King_of_Tokyo");
