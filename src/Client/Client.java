@@ -62,7 +62,8 @@ public class Client implements Runnable{
 				}
 				clientInputStream.close();
 			} catch (IOException e) {
-				t.stop();
+				//t.stop(); 
+				Thread.currentThread().interrupt();
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
