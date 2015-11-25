@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import Server.UserM;
 
 
 
@@ -24,12 +25,17 @@ public class Client implements Runnable{
 		this.port = Integer.parseInt(port);
 		this.iP = ip;
 		this.personName = userName;
+		UserM user = new UserM(this.personName, this.iP, this.port);
 		
 		try {
             client = new Socket(this.iP, this.port);
             System.out.println("Netzwerkverbindung konnte hergestellt werden");
             
             clientOutputStream = new ObjectOutputStream(client.getOutputStream());
+            synchronized (clientOutputStream){
+            clientOutputStream.writeObject((UserM)user);
+            clientOutputStream.flush();
+            }
     
 		} catch(Exception e) {
             System.out.println("Netzwerkverbindung konnte nicht hergestellt werden");

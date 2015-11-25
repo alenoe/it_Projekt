@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import Server.UserM;
 
 
 public class clientThread extends Thread{
@@ -34,15 +35,21 @@ public class clientThread extends Thread{
 	}
 	
 	public void listen()throws IOException {
-		String personName = null;
+		//String personName = null;
+		UserM user = null;
       while(!this.socket.isClosed()){
       try {
-		personName = (String) serverInputStream.readObject();
+		//personName = (String) serverInputStream.readObject();
+    	  synchronized (serverInputStream){
+    	  user = (UserM) serverInputStream.readObject();
+    	  System.out.println(user.toString());
+    	  }
 	} catch (ClassNotFoundException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
-     	 System.out.println(personName);
+      	System.out.println(user.toString());
+     	 /*System.out.println(personName);
           
           personName = "boobs";
           
@@ -52,7 +59,7 @@ public class clientThread extends Thread{
           personName = "Kacke";
           
           serverOutputStream.writeObject(personName);
-          serverOutputStream.flush(); 
+          serverOutputStream.flush(); */
       }
 	}
 }
